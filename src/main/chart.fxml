@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.Pane?>
+
+
+<?import javafx.scene.chart.StackedBarChart?>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+      prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.131" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="main.MainController">
+   <children>
+      <Label alignment="CENTER_RIGHT" layoutX="28.0" layoutY="46.0" text="Host:" textAlignment="RIGHT" />
+      <Label alignment="CENTER_RIGHT" layoutX="28.0" layoutY="71.0" text="Task:" textAlignment="RIGHT" />
+      <Label fx:id="hostLabel" layoutX="70.0" layoutY="46.0" />
+      <Label fx:id="taskLabel" layoutX="70.0" layoutY="71.0" />
+      <StackedBarChart fx:id="stackedBarChart" layoutX="50.0" layoutY="113.0" prefHeight="274.0" prefWidth="500.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </StackedBarChart>
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="600.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                <MenuItem fx:id="importItem" onAction="#importItemPressed" mnemonicParsing="false" text="Import new chart" />
+                <MenuItem fx:id="clearItem" onAction="#clearItemPressed" mnemonicParsing="false" text="Clear chart" />
+                <MenuItem fx:id="closeItem" onAction="#closeItemPressed" mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</Pane>
